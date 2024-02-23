@@ -8,10 +8,11 @@ class Calculator(App):
         self.icon = "cal0-icon.png"
         self.operators = ["/", "*", "+", "-"]
         self.last_operator = None
-        self.button = None
+        self.last_button = None
         
         main_layout = BoxLayout(orientation = "vertical")
-        self.solution = TextInput(background_color = "black", foreground_color = "white")
+        self.solution = TextInput(background_color = "black", foreground_color = "white", 
+                                  multiline=False, halign="right", font_size=50)
         
         main_layout.add_widget(self.solution)
         buttons = [
@@ -55,8 +56,8 @@ class Calculator(App):
             else:
                 new_text = current + button_text
                 self.solution.text = new_text
-        self.button = button_text
-        self.last_operator = self.button in self.operators
+        self.last_button = button_text
+        self.last_operator = self.last_button in self.operators
         
     def on_solution(self, instance):
         text = self.solution.text
