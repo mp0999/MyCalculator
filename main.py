@@ -1,7 +1,7 @@
 from kivy.app import App
 from kivy.uix.boxlayout import BoxLayout
-from kivy.uix.button import Button
 from kivy.uix.textinput import TextInput
+from kivy.uix.button import Button
 
 class Calculator(App):
     def build(self):
@@ -10,7 +10,7 @@ class Calculator(App):
         self.last_operator = None
         self.last_button = None
         
-        main_layout = BoxLayout(orientation = "vertical")
+        main_layout = BoxLayout(orientation = "vertical") # horizontal
         self.solution = TextInput(background_color = "black", foreground_color = "white", 
                                   multiline=False, halign="right", font_size=50, readonly=True)
         
@@ -20,7 +20,7 @@ class Calculator(App):
             ["4", "5", "6", "*"],
             ["1", "2", "3", "+"],
             [".", "0", "C", "-"],
-        ]
+        ]                           # ↣ nested array
         
         for row in buttons:
             r_layout = BoxLayout()
@@ -64,8 +64,7 @@ class Calculator(App):
         if text:
             solution = str(eval(self.solution.text))
             self.solution.text = solution
-    
-    
+       
 if __name__ == '__main__':
     app = Calculator()
     app.run()
