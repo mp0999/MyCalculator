@@ -1,3 +1,3 @@
-python mini calculator android app
+# python mini calculator android app
 
-# requirements = python3,kivy
+requirements = python3,kivy
